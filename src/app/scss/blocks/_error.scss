@@ -1,0 +1,32 @@
+.error {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+
+  &--list {
+    margin-top: 50px;
+    height: 60vh;
+  }
+
+  &--wrap {
+    height: 60vh;
+  }
+
+  &--cur {
+    min-height: 120px;
+    max-width: 90%;
+  }
+
+  &__item {
+    margin: auto;
+    list-style: none;
+  }
+
+  &__text {
+    font-size: 20px;
+    color: $gray3;
+    margin: 0;
+    text-align: center;
+  }
+}

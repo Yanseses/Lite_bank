@@ -1,0 +1,25 @@
+.header {
+  padding: 25px 0;
+  background-color: $brandPrimary;
+  box-shadow: 0px 5px 20px #00000040;
+  height: 50px;
+  display: flex;
+
+  &__container {
+    width: 1340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    height: 34px;
+  }
+
+  @include largeWrapper{
+    &__container {
+      width: 90%;
+    }
+  }
+}

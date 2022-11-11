@@ -1,0 +1,64 @@
+.filter {
+  font-family: 'Ubuntu-Regular', sans-serif;
+  align-items: baseline;
+  position: relative;
+  width: 300px;
+  grid-area: filterbtn;
+
+  &__btn {
+    font-family: inherit;
+    padding: 10px 50px 10px 16px;
+    background-color: #fff;
+    border: 1px solid $brandPrimary;
+    border-radius: 6px;
+    width: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 21px;
+      right: 16px;
+      background-image: $arrowFilter;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: .2s ease-in-out;
+    }
+
+    &[disabled]{
+      border-color: $gray5;
+      color: $gray5;
+      cursor: not-allowed;
+    }
+
+    &--rotate {
+      &::after{
+        transition: .2s ease-in-out;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include mediumWrapper{
+    width: auto;
+  }
+
+  @include smallWrapper{
+    &__btn{
+      font-size: 0;
+    }
+
+    &__btn {
+      background-image: $filter;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 5px;
+    }
+  }
+}

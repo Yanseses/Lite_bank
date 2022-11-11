@@ -1,0 +1,32 @@
+.currencies {
+  @include pageSection;
+
+  &__heading {
+    @include headings;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas: "your-cur change" "exchange change";
+    grid-template-columns: 588px 703px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+  }
+
+  @include skeletonLoader;
+
+  @include largeWrapper{
+    width: 90%;
+
+    &__wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include mediumWrapper{
+    &__wrapper {
+      grid-template-columns: 1fr;
+      grid-template-areas: "your-cur" "exchange" "change";
+    }
+  }
+}

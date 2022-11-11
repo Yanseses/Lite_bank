@@ -1,0 +1,82 @@
+.change {
+  @include windowSection($gray6, none);
+  grid-area: change;
+
+  &__subheading {
+    @include subheadings;
+    margin-bottom: 25px;
+
+    &--skeleton {
+      height: 23px;
+      width: 30%;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__list {
+    font-family: 'WorkSans-Regular', sans-serif;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    @include curList;
+  }
+
+  &__item {
+    @include curItem;
+  }
+
+  &__code {
+    font-family: 'WorkSans-Bold', sans-serif;
+    margin: 0;
+
+    &--skeleton {
+      width: 10%;
+      height: 20px;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__points {
+    border-bottom: 1px dashed black;
+    width: 100%;
+    margin: 0 10px;
+
+    &--skeleton {
+      border-color: #0000004b;
+    }
+
+    &--green {
+      border-color: #76CA66;
+    }
+
+    &--red {
+      border-color: #FD4E5D;
+    }
+  }
+
+  &__amount {
+    margin: 0;
+
+    &--skeleton {
+      width: 20%;
+      height: 20px;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    margin-left: 11px;
+    background-size: 100% 100%;
+
+    &--red {
+      background-image: $arrowRed;
+    }
+
+    &--green {
+      background-image: $arrowGreen;
+    }
+  }
+}

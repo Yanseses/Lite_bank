@@ -1,0 +1,56 @@
+.your-cur {
+  @include windowSection;
+  grid-area: your-cur;
+
+  &__subheading {
+    @include subheadings;
+    margin-bottom: 25px;
+
+    &--skeleton {
+      height: 23px;
+      width: 30%;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__list {
+    font-family: 'WorkSans-Regular', sans-serif;
+    @include curList;
+    height: 263px;
+  }
+
+  &__item {
+    @include curItem;
+  }
+
+  &__code {
+    margin: 0;
+    font-family: 'WorkSans-Bold', sans-serif;
+
+    &--skeleton {
+      width: 10%;
+      height: 20px;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__points {
+    border-bottom: 1px dashed black;
+    width: 100%;
+    margin: 0 10px;
+
+    &--skeleton {
+      border-color: #0000004b;
+    }
+  }
+
+  &__amount {
+    margin: 0;
+
+    &--skeleton {
+      width: 20%;
+      height: 20px;
+      animation: skeleton 3s infinite;
+    }
+  }
+}

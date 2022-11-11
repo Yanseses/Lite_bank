@@ -1,0 +1,137 @@
+.transaction {
+  @include windowSection($gray6, none, 25px 50px);
+  grid-area: transaction;
+
+  &__heading {
+    @include subheadings;
+
+    &--skeleton {
+      height: 23px;
+      width: 25%;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__error {
+    height: 25px;
+    width: inherit;
+    color: $error;
+    font-size: 12px;
+  }
+
+  &__form {
+    font-family: 'Ubuntu-Regular', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    padding-left: 206px;
+    position: relative;
+  }
+
+  &__label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+
+    &-text {
+      position: absolute;
+      white-space: nowrap;
+      text-align: right;
+      top: 10px;
+      left: -206px;
+      margin: 0;
+      min-width: 188px;
+    }
+  }
+
+  &__select {
+    display: flex;
+    width: inherit;
+
+    &-container{
+      width: inherit;
+      position: relative;
+    }
+  }
+
+  &__select-btn {
+    position: absolute;
+    right: 16px;
+    top: 11.5px;
+    width: 24px;
+    height: 21px;
+    border: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    background: $arrowFilter no-repeat center;
+
+    &--rotate {
+      transition: .2s ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__input {
+    @include inputs;
+    line-height: 22px;
+
+    &--error {
+      border-color: #ff0000;
+    }
+  }
+
+  &__submit {
+    @include primaryButton(16px 24px 16px 58px);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 24px;
+      top: 14px;
+
+      background: $mail;
+    }
+  }
+
+  @include largeWrapper{
+    &__label {
+      &-text {
+        white-space: normal;
+        text-align: right;
+      }
+    }
+  }
+
+  @include mediumWrapper{
+    &__label {
+      &-text {
+        text-align: inherit;
+        white-space: nowrap;
+        min-width: 175px;
+      }
+    }
+  }
+
+  @include smallWrapper{
+    &__form {
+      padding-left: 0;
+    }
+
+    &__label {
+      flex-wrap: wrap;
+
+      &-text {
+        position: initial;
+        align-items: baseline;
+        margin: 0;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+
+  &__item {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    color: $brandPrimary;
+    padding: 16px 24px;
+    background-color: #fff;
+    border-radius: 7px;
+    transition: .4s;
+
+    &:not(:last-child){
+      margin-right: 25px;
+    }
+
+    &--active {
+      background-color: #A0C3FF;
+    }
+
+    &:hover{
+      background-color: #A0C3FF;
+      transition: .4s;
+    }
+  }
+
+  @include smallWrapper{
+    position: fixed;
+    padding: 20px 0;
+    background-color: $white;
+    width: 100%;
+    top: 100px;
+    right: -120%;
+    transition: .3s;
+    flex-direction: column;
+    justify-content: normal;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.4);
+
+    &__item {
+      justify-content: center;
+      font-size: 18px;
+      border-radius: 15px;
+
+      &:not(:last-child){
+        margin-right: 0px;
+      }
+    }
+
+    &--active {
+      right: 0;
+    }
+  }
+}

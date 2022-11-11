@@ -1,0 +1,36 @@
+@import './_variables.scss';
+@import './_font.scss';
+@import './_mixins.scss';
+@import './_global.scss';
+@import './blocks/_loader.scss';
+@import './blocks/select-list.scss';
+@import './blocks/_popup.scss';
+
+@import './blocks/header/_header.scss';
+@import './blocks/header/_navigation.scss';
+@import './blocks/header/_nav-list.scss';
+
+@import './blocks/_main.scss';
+@import './blocks/auth/_auth.scss';
+@import './blocks/auth/_auth-form.scss';
+
+@import './blocks/cards/_card.scss';
+@import './blocks/_error.scss';
+@import './blocks/cards/_card-list.scss';
+@import './blocks/cards/_filter.scss';
+
+@import './blocks/detail/_detail.scss';
+@import './blocks/detail/_transaction.scss';
+@import './blocks/_board.scss';
+
+@import './blocks/history/_history.scss';
+
+@import './blocks/_history-table.scss';
+@import './blocks/_paramerts.scss';
+
+@import './blocks/currencies/_currencies.scss';
+@import './blocks/currencies/_your-cur.scss';
+@import './blocks/currencies/_change.scss';
+@import './blocks/currencies/_exchange.scss';
+
+@import './blocks/banks/_banks.scss';

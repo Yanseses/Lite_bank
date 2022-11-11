@@ -1,0 +1,72 @@
+.detail {
+  @include pageSection(50px);
+
+  &__head {
+    display: grid;
+    grid-row-gap: 25px;
+    align-items: center;
+    grid-template-areas: "heading button" "param param";
+    grid-template-columns: 1fr;
+  }
+
+  &__back-btn {
+    @include primaryButton(16px 24px 16px 58px);
+    position: relative;
+    grid-area: button;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 24px;
+      top: 14px;
+      background: $backArrow;
+    }
+  }
+
+  &__heading {
+    @include headings;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-areas: "transaction board" "history history";
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(188px, auto);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    width: 100%;
+    min-height: 60vh;
+
+    &--error {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      grid-auto-rows: 0;
+    }
+  }
+
+  @include skeletonLoader;
+
+  @include largeWrapper{
+    width: 90%;
+  }
+
+  @include mediumWrapper{
+    &__back-btn {
+      font-size: 0;
+      padding: 16px 24px 16px 32px;
+
+      &::before{
+        left: 16px;
+      }
+    }
+
+    &__main{
+      grid-template-columns: 1fr;
+      grid-template-areas: "board" "transaction" "history";
+      grid-column-gap: 0;
+    }
+  }
+}

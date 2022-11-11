@@ -1,0 +1,94 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  &__label {
+    font-family: 'Ubuntu-Regular', sans-serif;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 272px;
+
+    &-text {
+      position: absolute;
+      margin: 0;
+      width: 57px;
+      top: 10px;
+      left: -68px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__input {
+    @include inputs;
+    line-height: 22px;
+
+    &-btn {
+      position: absolute;
+      top: 15%;
+      right: 24px;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background-repeat: no-repeat;
+      background-color: inherit;
+      background-size: 100%;
+      background-position: center;
+      cursor: pointer;
+
+      &--close {
+        background-image: $eyeClose;
+      }
+
+      &--open {
+        background-image: $eyeOpen;
+      }
+    }
+
+    &::placeholder {
+      color: #6B7280;
+    }
+
+    &--error {
+      border-color: $error;
+    }
+  }
+
+  &__error {
+    height: 25px;
+    font-size: 12px;
+    width: 100%;
+    color: $error;
+  }
+
+  &__submit {
+    @include primaryButton(14px 21px, 14px);
+  }
+
+  @include smallWrapper{
+    align-items: stretch;
+
+    &__label {
+      width: 100%;
+      position: relative;
+      flex-wrap: wrap;
+
+      &-text {
+        position: initial;
+        margin-top: 0;
+        margin-bottom: 5px;
+        width: 57px;
+        left: 0;
+        width: auto;
+      }
+    }
+
+    &__input {
+      &-btn {
+        top: 40%;
+      }
+    }
+  }
+}

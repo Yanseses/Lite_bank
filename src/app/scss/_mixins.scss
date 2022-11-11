@@ -1,0 +1,168 @@
+@mixin primaryButton($padding, $fsize: 16px) {
+  font-family: 'Ubuntu-Medium', sans-serif;
+  background-color: $brandPrimary;
+  border-radius: 7px;
+  letter-spacing: -0.01em;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: $white;
+  font-size: $fsize;
+  transition: .4s;
+  padding: $padding;
+
+  &:hover {
+    background-color: #116acc4d;
+    transition: .4s;
+  }
+
+  &[disabled]{
+    background-color: $gray5;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    background-color: #0c4a8f;
+  }
+}
+
+@mixin curList{
+  margin: 0;
+  padding: 0 5px 0 0;
+  overflow-y: scroll;
+}
+
+@mixin curItem{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin inputs($width: inherit, $borderColor: $gray5){
+  padding: 10px 50px 10px 16px;
+  border: 1px solid $borderColor;
+  border-radius: 7px;
+  width: $width;
+  font-size: 16px;
+
+  &::placeholder {
+    color: $gray4;
+    line-height: 24px;
+  }
+}
+
+@mixin windowSection($bcolor: $white, $shadow: $shadow, $pad: 50px){
+  padding: $pad;
+  border-radius: 50px;
+  background-color: $bcolor;
+  box-shadow: $shadow;
+
+  @include mediumWrapper{
+    padding: 25px;
+    border-radius: 25px;
+  }
+}
+
+@mixin pageSection($gap: 56px){
+  display: grid;
+  grid-row-gap: $gap;
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 1340px;
+}
+
+@mixin headings(){
+  font-family: 'WorkSans-Bold', sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-style: normal;
+  color: $black;
+  margin: 0;
+  grid-area: heading;
+
+  @include mediumWrapper{
+    font-size: 30px;
+  }
+
+  @include smallWrapper{
+    font-size: 26px;
+  }
+}
+
+@mixin subheadings {
+  font-family: 'WorkSans-Bold', sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+@mixin historyList($fontSize){
+  padding: 0;
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+  font-size: $fontSize;
+}
+
+@mixin skeletonLoader {
+  @keyframes skeleton {
+    0% {
+      background-color: $gray6;
+    }
+    50% {
+      background-color: $gray7;
+    }
+    100% {
+      background-color: $gray6;
+    }
+  }
+}
+
+@mixin historyItem($pad){
+  list-style: none;
+  padding: $pad;
+  margin-left: 5%;
+  width: 10%;
+  word-break: break-word;
+
+  &:nth-child(-n+2){
+    width: 20%;
+  }
+
+  @include mediumWrapper{
+    width: 20%;
+  }
+}
+
+@mixin largeWrapper {
+  @media (max-width: 1480px) {
+    @content;
+  }
+}
+
+@mixin mediumWrapper{
+  @media (max-width: 1050px) {
+    @content;
+  }
+}
+
+@mixin smallWrapper{
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin xSmallWrapper{
+  @media (max-width: 320px) {
+    @content;
+  }
+}

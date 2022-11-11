@@ -1,0 +1,78 @@
+.history-table {
+  @include windowSection($gray6, none, 25px 50px 40px);
+  grid-area: history;
+
+  &__heading {
+    @include subheadings;
+  }
+
+  &--lite {
+    cursor: pointer;
+    transition: .5s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 5px 7px 3px #0000004d;
+      transform: scale(1.005);
+    }
+  }
+
+  &__list {
+    margin: 25px 0 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__head {
+    @include historyList(20px);
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
+    background-color: $brandPrimary;
+    color: $white;
+    border-radius: 15px;
+
+    &-item {
+      @include historyItem(20px 0);
+    }
+  }
+
+  &__body {
+    @include historyList(16px);
+    font-family: 'Ubuntu-Regular', 'Arial', sans-serif;
+    border-bottom: 2px solid #0052ff1a;
+    color: #374151;
+
+    &-item {
+      @include historyItem(21px 0 26px);
+
+      &--skeleton {
+        padding: 0;
+        margin: 21px 0 26px 5%;
+        width: 10%;
+        height: 24px;
+        animation: skeleton 3s infinite;
+      }
+
+      &--up {
+        color: $success;
+      }
+
+      &--down {
+        color: $error;
+      }
+    }
+  }
+
+  &__void {
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin: 0 auto;
+      font-size: 20px;
+      color: $gray4;
+    }
+  }
+}

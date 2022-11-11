@@ -1,0 +1,23 @@
+.banks {
+  @include pageSection;
+
+  &__heading {
+    @include headings;
+  }
+
+  &__container {
+    width: 100%;
+    height: 728px;
+    display: flex;
+
+    &--skeleton {
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  @include skeletonLoader;
+
+  @include largeWrapper{
+    width: 90%;
+  }
+}

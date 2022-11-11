@@ -1,0 +1,56 @@
+.card {
+  @include pageSection;
+
+  &__head {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "heading filterbtn btn";
+    grid-template-columns: .3fr 1fr;
+    align-items: center
+  }
+
+  &__heading {
+    @include headings;
+  }
+
+  &__new-account {
+    @include primaryButton(16px 24px 16px 58px);
+    position: relative;
+    grid-area: btn;
+
+    &::before {
+      content: "";
+      left: 24px;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 14px;
+      background-image: $plus;
+      background-size: 100%;
+      background-position: center;
+    }
+  }
+
+  @include largeWrapper{
+    width: 90%;
+
+    &__head {
+      grid-template-columns: .5fr 1fr;
+    }
+  }
+
+  @include mediumWrapper {
+    &__head {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__new-account{
+      font-size: 0;
+      padding: 16px 24px 16px 32px;
+
+      &::before{
+        left: 16px;
+      }
+    }
+  }
+}

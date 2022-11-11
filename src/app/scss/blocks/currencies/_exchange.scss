@@ -1,0 +1,223 @@
+.exchange {
+  @include windowSection;
+  grid-area: exchange;
+
+  &__subheading {
+    @include subheadings;
+    margin-bottom: 25px;
+
+    &--skeleton {
+      height: 23px;
+      width: 30%;
+      animation: skeleton 3s infinite;
+    }
+  }
+
+  &__form {
+    font-family: 'Ubuntu-Regular', sans-serif;
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  &__select {
+    width: 140px;
+    position: relative;
+
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-label {
+      width: 47%;
+      height: fit-content;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+  }
+
+  &__input {
+    @include inputs();
+    line-height: 24px;
+    margin-left: 8px;
+
+    &-label {
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    &--error {
+      border-color: $error;
+    }
+  }
+
+  &__error {
+    height: 24px;
+    background-image: $warning;
+    background-repeat: no-repeat;
+    transition: .5s;
+    cursor: pointer;
+    position: relative;
+
+    &-value {
+      content: "";
+      position: absolute;
+      left: -97px;
+      bottom: 40px;
+      padding: 10px;
+      display: none;
+      background: $error;
+      width: 200px;
+      min-height: 25px;
+      color: #fff;
+      font-size: 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: 0 0 10px 1px #000;
+
+      &::after{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #BA0000 transparent transparent transparent;
+      }
+    }
+
+    &--active {
+      transition: .5s;
+      width: 40px;
+      margin-left: 10px;
+    }
+
+    &:hover &-value {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    @include inputs();
+    background-color: #fff;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 21px;
+      right: 16px;
+      background-image: $arrowFilter;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: .2s ease-in-out;
+    }
+
+    &--rotate {
+      &::after{
+        transition: .2s ease-in-out;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__submit {
+    @include primaryButton(47px 13px);
+    margin-left: 25px;
+  }
+
+  @include largeWrapper{
+    &__form {
+      flex-direction: column;
+    }
+
+    &__select{
+      &-container {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__container{
+      margin-bottom: 10px;
+    }
+
+    &__submit {
+      margin: 0;
+      padding: 13px;
+    }
+  }
+
+  @include mediumWrapper{
+    &__error {
+      &-value {
+        top: initial;
+        bottom: 40px;
+        left: initial;
+        right: 100px;
+      }
+    }
+
+    &__select {
+      &-label {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      &-container{
+        flex-wrap: wrap;
+        margin: 0;
+      }
+    }
+
+  &__container {
+    margin-bottom: 25px;
+  }
+
+  &__select {
+    width: 100%;
+    margin-left: 8px;
+    }
+  }
+
+  @include smallWrapper{
+    &__error{
+      &-value {
+        right: 25px;
+      }
+    }
+  }
+
+  @include xSmallWrapper{
+    &__error{
+      &-value {
+        right: 0;
+      }
+
+      &--active {
+        width: 80px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

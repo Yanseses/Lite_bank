@@ -1,0 +1,73 @@
+.navigation {
+  font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
+
+
+  &__burger {
+    display: none;
+  }
+
+  @include smallWrapper{
+    &__burger{
+      display: block;
+      border: none;
+      width: 34px;
+      height: 24px;
+      position: relative;
+      background-color: inherit;
+      cursor: pointer;
+
+      &-line {
+        height: 4px;
+        background-color: #fff;
+        transition: 0.4s;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        transition: .3s;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 4px;
+        background-color: #fff;
+        right: 0;
+        width: 100%;
+        transition: .3s;
+      }
+
+      &::after{
+        top: 100%;
+      }
+
+      &::before{
+        top: 0;
+      }
+
+      &:hover > &-line{
+        width: 100%;
+      }
+
+      &--active {
+        & > .navigation__burger-line {
+          opacity: 0;
+        }
+
+        &::before,
+        &::after {
+          top: 50%;
+          transition: .3s;
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}

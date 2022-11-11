@@ -1,0 +1,18 @@
+.auth {
+  margin: auto;
+  padding: 50px 85px 50px 115px;
+  background-color: #F3F4F6;
+  border-radius: 50px;
+  display: grid;
+  grid-row-gap: 35px;
+
+  &__heading {
+    @include headings;
+  }
+
+  @include smallWrapper{
+    grid-row-gap: 15px;
+    max-width: 55%;
+    padding: 50px;
+  }
+}
