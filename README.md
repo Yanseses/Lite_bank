@@ -1,35 +1,31 @@
 ## Pet-project: Lite Bank System
-
-### Используемые технологии:
+### Used technologies:
 * NPM
-* WebPack 5
+* webpack 5
 * Vanilla JS
 * SASS
-
-### Тестирование:
+### Testing:
 * prettier
 * jest
-
-### Качество кода:
+### Code quality:
 * eslint
 * editorconfig
-
-### Дополнительные расширения:
-* yamaps api
+### Additional extensions:
+* yamaps-api
 * Chart.js
 
 
-### Запуск проекта:
-Для того, чтобы запустить проект на локальном или виртуальном хосте, требуется:
-1. Клонировать репозиторий из GitHub в нужную папку.
-2. В папке открыть консоль (GitBash) и ввести команду ` npm i ` - тем самым установятся все необходимые расширения.
-3. После установки всех необходимых расширений выполняем команду ` npm build ` - тем самым собираем наш проект в Production режиме.
-4. После установки всех требуемых расширений и сборки проекта, через командную строку запускаем локальный сервер ` npm start `.
-5. Зайти на локальный/виртуальный сервер и перейти в папку /dist.
-6. Для авторизации доступны следующие учетные данные:
-	* Логин: `developer`
-	* Пароль: `skillbox`
+### Launch of the project:
+In order to run a project on a local or virtual host, you need:
+1. Clone the repository from GitHub to the desired folder.
+2. In the folder, open the console (GitBash) and enter the command ` npm i ` - this will install all the necessary extensions.
+3. After installing all the necessary extensions, we execute the ` npm build ` command - thereby building our project in Production mode.
+4. After installing all the required extensions and building the project, run the local server via the command line ` npm start `.
+5. Go to the local/virtual server and go to the /dist folder.
+6. The following credentials are available for authorization:
+	* Login: `developer`
+	* password: `skillbox`
 
-Бэкенд генерирует на одном из пользователей искуственные переводы, что позволяет отследить корректность рендера таблиц переводов а так же генерацию таблиц статистики.
+The backend generates artificial translations on one of the users, which allows you to track the correctness of the rendering of translation tables, as well as the generation of statistics tables.
 
-**Обратите внимание:** Локальным веб сервером по умолчанию слушается 3000 порт.
+**Please note:** By default, the local web server listens on port 3000.
